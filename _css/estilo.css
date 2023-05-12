@@ -1,0 +1,12 @@
+
+@charset "UTF-8";
+p {
+    text-align: justify;
+    text-indent: 50px;
+    hyphens: auto;
+}
+
+h2 {
+    text-align: left;
+}
+

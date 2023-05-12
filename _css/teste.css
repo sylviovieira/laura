@@ -1,0 +1,29 @@
+#id1 {
+background-color: blue;
+color: white;
+}
+#id2 {
+background-color: yellow;
+color: black;
+}
+#id3 {
+background-color: lightblue;
+color: black;
+}
+#id4 {
+background-color: lightgreen;
+color: black;
+}
+/*formatacao da legenda*/
+figure.foto_legenda{
+    border: 8px solid red;
+    
+}
+figure.foto_legenda img{
+    width: auto;
+    height: auto;
+}
+h2
+{
+    color:red;
+}
