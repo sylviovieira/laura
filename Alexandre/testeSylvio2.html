@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Salvar dados em CSV</title>
+</head>
+<body>
+  <h1>Salvar dados em CSV</h1>
+
+  <form id="myForm">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="phone">Telefone:</label>
+    <input type="tel" id="phone" name="phone" required><br>
+
+    <button type="submit">Salvar</button>
+  </form>
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Evita o envio do formulário
+
+      // Obter os valores dos inputs
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+
+      // Criar o conteúdo CSV
+      var csvContent = "data:text/csv;charset=utf-8,"
+      csvContent += "Name\n";
+      csvContent += name + "\n";
+      csvContent += "Email\n";
+      csvContent += email + "\n";
+      csvContent += "Phone\n";
+      csvContent += phone + "\n";
+
+      // Criar um elemento de link de download
+      var link = document.createElement('a');
+      link.setAttribute('href', encodeURI(csvContent));
+      link.setAttribute('download', 'dados.csv');
+      document.body.appendChild(link);
+
+      // Simular o clique no link de download
+      link.click();
+    });
+  </script>
+</body>
+</html>

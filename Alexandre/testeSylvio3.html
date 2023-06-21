@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Capturar dados do formulário</title>
+</head>
+<body>
+  <h1>Capturar dados do formulário</h1>
+
+  <form id="myForm">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="phone">Telefone:</label>
+    <input type="tel" id="phone" name="phone" required><br>
+
+    <button type="button" onclick="capturarDados()">Capturar</button>
+  </form>
+
+  <script>
+    function capturarDados() {
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+
+      // Exemplo de utilização dos dados capturados
+      console.log("Nome: " + name);
+      console.log("Email: " + email);
+      console.log("Telefone: " + phone);
+
+      // Você pode fazer o que quiser com os dados capturados
+      // Por exemplo, você pode armazená-los em outras variáveis,
+      // enviá-los para um servidor, etc.
+    }
+  </script>
+</body>
+</html>

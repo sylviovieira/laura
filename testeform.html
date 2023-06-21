@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Copiar formulário para a área de transferência</title>
+</head>
+<body>
+  <form id="meuFormulario">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" value="João">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="joao@example.com">
+
+    <button onclick="copiarFormulario()">Copiar para a área de transferência</button>
+  </form>
+
+  <script>
+    function copiarFormulario() {
+      // Obter o formulário
+      var formulario = document.getElementById('meuFormulario');
+
+      // Criar um elemento de input temporário
+      var inputTemporario = document.createElement('input');
+      inputTemporario.value = formulario.outerHTML;
+
+      // Anexar o elemento de input temporário ao corpo do documento
+      document.body.appendChild(inputTemporario);
+
+      // Selecionar o conteúdo do elemento de input temporário
+      inputTemporario.select();
+
+      // Copiar o conteúdo para a área de transferência
+      document.execCommand('copy');
+
+      // Remover o elemento de input temporário
+      document.body.removeChild(inputTemporario);
+
+      // Exibir uma mensagem de sucesso
+      alert('O formulário foi copiado para a área de transferência!');
+    }
+  </script>
+</body>
+</html>
+Neste exemplo, o formulário possui campos de nome e email, e há um botão que chama a função copiarFormulario() quando clicado. A função cria dinamicamente um elemento de input temporário, define seu valor como o conteúdo do formulário (obtido através do outerHTML), o adiciona ao corpo do documento, seleciona seu conteúdo e copia para a área de transferência usando o document.execCommand('copy'). Em seguida, o elemento temporário é removido do documento e uma mensagem de sucesso é exibida com alert().
+
+
+
+
+
+

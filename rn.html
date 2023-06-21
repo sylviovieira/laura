@@ -4,6 +4,7 @@
     <meta charset="UTF-8"/>
     <title> Anamnese</title>
     <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
 </head> 
 
 <body>
@@ -35,9 +36,9 @@
             <h2>Identificação do Recém Nascido</h2>
             </div>
            <div>
-                <Label> Peso:</Label>
+                <Label> Peso (Kg):</Label>
                 <input type="number" step="0.0010" size="4" maxlength="4" min="0" max="15" name="peso" id="peso">
-                <label>Estatura:</label>
+                <label>Estatura (Cm):</label>
                 <input type="number" step="0.0010" size="4" maxlength="4" min="0" max="15" name="estatura" id="estatura">
                 <label> PC(cm):</label>
                 <input type="number" step="0.0010" size="4" maxlength="4" min="0" max="15" name="pc" id="pc">
@@ -170,7 +171,9 @@
                 <label> Simetria:</label>
                 <label><input type="radio" name="facesimetria" value="assimetrica">Assimétrica
                 <label><input type="radio" name="facesimetria" value="simetrica" checked>Simétrica
-
+                <label> &nbsp;&nbsp;&nbsp;Aparência sindrômica:</label>
+                <label><input type="radio" name="facesindromica" value="sim">Sim
+                <label><input type="radio" name="facesindromica" value="nao" checked>Não
                 <label> &nbsp; &nbsp; &nbsp; Malformação:</label>
                 <label><input type="radio" name="malf" value="sim">Sim
                 <label><input type="radio" name="malf" value="nao" checked>Não
@@ -238,30 +241,30 @@
             <br>
                 <label>Mucosa:</label>
                 <label>
-                    <input type="radio" name="mucosa" value="corada" checked>Corada
+                    <input type="radio" name="mucosacor" value="corada" checked>Corada
                 </label>
                 <label>
-                    <input type="radio" name="mucosa" value="palida">Pálida
+                    <input type="radio" name="mucosacor" value="palida">Pálida
                 </label>
                 <label>
-                    <input type="radio" name="mucosa" value="icterica">Ictérica
+                    <input type="radio" name="mucosaict" value="icterica">Ictérica
                 </label>
                 <label>
-                    <input type="radio" name="mucosa" value="ancterica">Anictérica
-                </label>
-
-                <label>
-                    <input type="radio" name="mucosa" value="cianotica">Cianótica
-                </label>
-                <label>
-                    <input type="radio" name="mucosa" value="acianotica">Acianótica
+                    <input type="radio" name="mucosaict" value="ancterica" checked>Anictérica
                 </label>
 
                 <label>
-                    <input type="radio" name="mucosa" value="hidratada">Hidratada
+                    <input type="radio" name="mucosacia" value="cianotica">Cianótica
                 </label>
                 <label>
-                    <input type="radio" name="mucosa" value="desidratada">Desidratada
+                    <input type="radio" name="mucosacia" value="acianotica" checked>Acianótica
+                </label>
+
+                <label>
+                    <input type="radio" name="mucosaumida" value="umida" checked>Úmida
+                </label>
+                <label>
+                    <input type="radio" name="mucosaumida" value="seca">Seca
                 </label>
             <div> <br>
                 <label> Orelhas/ouvidos:</label> <br>
@@ -349,7 +352,7 @@
                 <label><input type="radio" name="esfresp" value="nao" checked>Não
                 <br>
                 <label> Ausculta Cardíaca:</label> <br>
-                <label> Bulhas cardíacas: </label>
+                <label><input type="radio" name="auscultacar" value="bulhas">Bulhas cardíacas
                 <label><input type="radio" name="auscultacar" value="comsopro">Com Sopro
                 <label><input type="radio" name="auscultacar" value="semsopro" checked>Sem Sopro
                 </div>
@@ -521,10 +524,15 @@
                 </div>
                 <br>
             </fieldset>
+                <div class="row">
+                <div class="col-10 col-s-12"></div>
+                <div class="col-2 col-s-12"></div>
+                <button id="btnSalvar" type="button" onclick="navigator.clipboard.writeText($("#formulario").serialize());"> Copiar </button>
+            </div>
 
 </form>
         <br>
-[BOTÃO COPIAR]
+
 <div text-align: center>
 <h5 > Copyright 2023 - Laboratório de Produtos Avançados do Mestrado em Saúde Materno Infantil - by Sylvio Vieira</h5>
     </div>

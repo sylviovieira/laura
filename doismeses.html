@@ -34,15 +34,17 @@
             <div>
             <h2>Identificação da criança com 2 - 3 Meses</h2>
             </div>
-            <div>
-                <Label> Peso:</Label>
-                <input type="text" nome="peso" id="peso">
-                <label>Estatura:</label>
-                <input type="text" nome="estatura" id="estatura">
+           <div>
+                <Label> Peso (Kg):</Label>
+                <input type="number" step="0.0010" size="4" maxlength="4" min="0" max="15" name="peso" id="peso">
+                <label>Estatura (Cm):</label>
+                <input type="number" step="0.0010" size="4" maxlength="4" min="0" max="15" name="estatura" id="estatura">
                 <label> PC(cm):</label>
-                <input type="text" nome="pc" id="pc">
+                <input type="number" step="0.0010" size="4" maxlength="4" min="0" max="15" name="pc" id="pc">
                 <label>Temperatura axilar (ºC):</label>
-                <input type="text" nome="tempaux" id="tempaux">
+                <input type="number" step="0.0010" size="4" maxlength="4" min="0" max="15" name="tempaux" id="tempaux">
+                <label>FR (RPM):</label>
+                <input type="number" step="0.0010" size="4" maxlength="4" min="0" max="15" name="fr" id="fr">
              </div>
             <br>
             <div>
@@ -121,19 +123,21 @@
             </div>
             <br>
             <div>
-                <label> Millium sebáceo:</label>
-                <label><input type="radio" name="millium" value="sim" checked>Sim
-                <label><input type="radio" name="millium" value="nao">Não
-                <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hemangioma: </label>
-                <label> <input type="radio" name="hemanioma" value="sim" checked>Sim
-                <label> <input type="radio" name="hemangioma" value="nao">Não
-                <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mancha mongólica: </label>
-                <label> <input type="radio" name="mancham" value="sim" checked>Sim
-                <label> <input type="radio" name="mancham" value="nao">Não
-                <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Eritema tóxico: </label>
-                <label> <input type="radio" name="eritema" value="sim" checked>Sim
-                <label> <input type="radio" name="eritema" value="nao">Não
+                <label> Millium sebáceo:</label>&nbsp; &nbsp;
+                <label><input type="radio" name="millium" value="sim" >Sim
+                <label><input type="radio" name="millium" value="nao" checked>Não &nbsp; &nbsp;
+                <label> Hemangioma: </label>
+                <label> <input type="radio" name="hemanioma" value="sim" >Sim
+                <label> <input type="radio" name="hemangioma" value="nao" checked>Não &nbsp; &nbsp;
+                <label> Mancha mongólica: </label>
+                <label> <input type="radio" name="mancham" value="sim">Sim
+                <label> <input type="radio" name="mancham" value="nao" checked>Não &nbsp; &nbsp;
+                <label> Eritema tóxico: </label>
+                <label> <input type="radio" name="eritema" value="sim">Sim
+                <label> <input type="radio" name="eritema" value="nao" checked>Não
             </div>
+        </fieldset>
+        <fieldset>
             <br>
             <div>
                 <label>Cabeça</label>
@@ -144,11 +148,11 @@
                 <label><input type="radio" name="fontenelas" value="deprimidas">Deprimidas
                 <label><input type="radio" name="fontenelas" value="planas">Planas
                 <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bossa serossanguinolenta: </label>
-                <label> <input type="radio" name="bossa" value="sim" checked>Sim
-                <label> <input type="radio" name="bossa" value="nao">Não
+                <label> <input type="radio" name="bossa" value="sim" >Sim
+                <label> <input type="radio" name="bossa" value="nao" checked>Não
                 <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cefalohematoma: </label>
-                <label> <input type="radio" name="mancham" value="sim" checked>Sim
-                <label> <input type="radio" name="mancham" value="nao">Não
+                <label> <input type="radio" name="cefalo" value="sim">Sim
+                <label> <input type="radio" name="cefalo" value="nao" checked>Não
             </div>
             <br>
             <div>
@@ -158,17 +162,200 @@
                 <label> <input type="radio" name="linfonodos" value="fibrobastico">Fibrobástico
                 <label> <input type="radio" name="linfonodos" value="amolecido">Amolecido
                 <label> <input type="radio" name="linfonodos" value="endurecido">Endurecido
-                <label> <input type="radio" name="eritema" value="nao" checked>Não Apresenta
+                <label> <input type="radio" name="linfonodos" value="nao" checked>Não Apresenta
             </div>
             <br>
             <div>
-                <label> Face:</label>
-                <label><input type="radio" name="face" value="assimetrica">Assimétrica
-                <label><input type="radio" name="face" value="simetrica" checked>Simétrica
+                <label> Face:</label> <br>
+                <label> Simetria:</label>
+                <label><input type="radio" name="facesimetria" value="assimetrica">Assimétrica
+                <label><input type="radio" name="facesimetria" value="simetrica" checked>Simétrica
+                <label> &nbsp;&nbsp;&nbsp;Aparência sindrômica:</label>
+                <label><input type="radio" name="facesindromica" value="sim">Sim
+                <label><input type="radio" name="facesindromica" value="nao" checked>Não
+                <label> &nbsp; &nbsp; &nbsp; Malformação:</label>
+                <label><input type="radio" name="malf" value="sim">Sim
+                <label><input type="radio" name="malf" value="nao" checked>Não
+
+                <label> &nbsp; &nbsp; &nbsp; Deformidades:</label>
+                <label><input type="radio" name="defo" value="sim">Sim
+                <label><input type="radio" name="defo" value="nao" checked>Não
+            </div>
+<br>
+             <div>
+                <label> Olhos:</label> <br>
+                <label> Simetria:</label>
+                <label><input type="radio" name="olhossimetria" value="assimetrico">Assimétricos
+                <label><input type="radio" name="olhossimetria" value="simetrico" checked>Simétricos
+
+                <label> &nbsp; &nbsp; &nbsp; Secreção:</label>
+                <label><input type="radio" name="osecrecao" value="sim">Sim
+                <label><input type="radio" name="osecrecao" value="nao" checked>Não
+
+                <label> &nbsp; &nbsp; &nbsp; Estrabismo:</label>
+                <label><input type="radio" name="estrabismo" value="sim">Sim
+                <label><input type="radio" name="estrabismo" value="nao" checked>Não
+<br>
+                <label> &nbsp; &nbsp; &nbsp; Esclera:</label>
+                <label><input type="radio" name="esclera" value="icterica">Ictérica
+                <label><input type="radio" name="esclera" value="anicterica" checked>Anictérica
+
+                <label> &nbsp; &nbsp; &nbsp; Pupilas:</label>
+                <label><input type="radio" name="pupilas" value="anisocoricas">Anisocóricas
+                <label><input type="radio" name="pupilas" value="isocoricas" checked>Isocóricas
+            </div>
+<br>
+             <div>
+                <label> Nariz:</label> <br>
+                <label> Secreção:</label>
+                <label><input type="radio" name="nsecrecao" value="sim">Sim
+                <label><input type="radio" name="nsecrecao" value="nao" checked>Não
+
+                <label> &nbsp; &nbsp; &nbsp; Batimentos das asas do nariz:</label>
+                <label><input type="radio" name="nasas" value="sim">Sim
+                <label><input type="radio" name="nasas" value="nao" checked>Não
+
+                <label> &nbsp; &nbsp; &nbsp; Obstrução nasal:</label>
+                <label><input type="radio" name="obstrucao" value="sim">Sim
+                <label><input type="radio" name="obstrucao" value="nao" checked>Não
+            </div>
+             <div><br>
+                <label> Boca:</label> <br>
+                <label> Palato íntegro:</label>
+                <label><input type="radio" name="palato" value="sim" checked>Sim
+                <label><input type="radio" name="palato" value="nao">Não
+
+                <label> &nbsp; &nbsp; &nbsp; Fenda Labial:</label>
+                <label><input type="radio" name="fendalabial" value="sim">Sim
+                <label><input type="radio" name="fendalabial" value="nao" checked>Não
+
+                <label> &nbsp; &nbsp; &nbsp; Tamanho da língua:</label>
+                <label><input type="radio" name="tlingua" value="normal" checked>Normal
+                <label><input type="radio" name="tlingua" value="macroglossia">Macroglossia
+
+                <label> &nbsp; &nbsp; &nbsp; Freio língual:</label>
+                <label><input type="radio" name="flingua" value="normal" checked>Normal
+                <label><input type="radio" name="flingua" value="curto">Curto
+            </div>
+            <br>
+                <label>Mucosa:</label>
+                <label>
+                    <input type="radio" name="mucosacor" value="corada" checked>Corada
+                </label>
+                <label>
+                    <input type="radio" name="mucosacor" value="palida">Pálida
+                </label>
+                <label>
+                    <input type="radio" name="mucosaict" value="icterica">Ictérica
+                </label>
+                <label>
+                    <input type="radio" name="mucosaict" value="ancterica" checked>Anictérica
+                </label>
+
+                <label>
+                    <input type="radio" name="mucosacia" value="cianotica">Cianótica
+                </label>
+                <label>
+                    <input type="radio" name="mucosacia" value="acianotica" checked>Acianótica
+                </label>
+
+                <label>
+                    <input type="radio" name="mucosaumida" value="umida" checked>Úmida
+                </label>
+                <label>
+                    <input type="radio" name="mucosaumida" value="seca">Seca
+                </label>
+            <div> <br>
+                <label> Orelhas/ouvidos:</label> <br>
+                <label> Secreção:</label>
+                <label><input type="radio" name="oosecrecao" value="sim">Sim
+                <label><input type="radio" name="oosecrecao" value="nao" checked>Não
+
+                <label> &nbsp; &nbsp; &nbsp; Linfonodo retroauricular palpável:</label>
+                <label><input type="radio" name="linfoouvido" value="sim">Sim
+                <label><input type="radio" name="linfoouvido" value="movel" >Móvel
+                <label><input type="radio" name="linfoouvido" value="fixo" >Fixo
+                <label><input type="radio" name="linfoouvido" value="fibroblastico" >Fibroblástico
+                <label><input type="radio" name="linfoouvido" value="amolecido" >Amolecido
+                <label><input type="radio" name="linfoouvido" value="endurecido" >Endurecido
+                <label><input type="radio" name="linfoouvido" value="nao" checked>Não
+
+               </div>
+
             </div>
 
-
             </fieldset>
+            <fieldset>
+<br>
+
+                <br>
+                <div>
+                    <label> Pescoço:</label> <br>
+                <label> Torcicolo congênito:</label>
+                <label><input type="radio" name="torcicolo" value="sim">Sim
+                <label><input type="radio" name="torcicolo" value="nao" checked>Não
+                </div>
+                 <br>
+                <div>
+                    <label> Tórax:</label> <br>
+                    <label> Simetria:</label>
+                <label><input type="radio" name="toraxsimetria" value="assimetrico">Assimétrico
+                <label><input type="radio" name="toraxsimetria" value="simetrico" checked>Simétrico
+                    <br>
+                <label> Deformidades:</label>
+                <label><input type="radio" name="toraxdeformidade" value="sim">Sim
+                <label><input type="radio" name="toraxdeformidade" value="nao" checked>Não
+                    <br><br>
+                <label> Linfonodo palpável supraclavicular:</label>
+                    <br>
+                <label><input type="radio" name="linfonodosupraclavicular" value="sim">Sim
+                <label><input type="radio" name="linfonodosupraclavicular" value="nao" checked>Não
+                    <br><br>
+                <label> Linfonodo palpável axilar:</label><br>
+                <label><input type="radio" name="linfonodoaxilar" value="sim">Sim
+                <label><input type="radio" name="linfonodoaxilar" value="movel" >Móvel
+                <label><input type="radio" name="linfonodoaxilar" value="fixo" >Fixo
+                <label><input type="radio" name="linfonodoaxilar" value="fibroblastico" >Fibroblástico
+                <label><input type="radio" name="linfonodoaxilar" value="amolecido" >Amolecido
+                <label><input type="radio" name="linfonodoaxilar" value="endurecido" >Endurecido
+                <label><input type="radio" name="linfonodoaxilar" value="nao" checked>Não
+                </div>
+                 <br>
+                <div>
+                <label> Mamilos:</label><br>
+                <label> Broto Mamário:</label>
+                <label><input type="radio" name="brotomamario" value="sim">Sim
+                <label><input type="radio" name="brotomamario" value="nao" checked>Não
+                </div>
+                <br>
+                 <div>
+                <label> Ausculta Pulmonar:</label> <br>
+                <label> Tiragem: </label>
+                <label><input type="radio" name="auscultapul" value="sim">Sim
+                <label><input type="radio" name="auscultapul" value="nao" checked>Não
+                <br>
+                <label> Retração Xifoidiana: </label>
+                <label><input type="radio" name="retxif" value="sim">Sim
+                <label><input type="radio" name="retxif" value="nao" checked>Não
+                <br>
+                <label> Gemidos: </label>
+                <label><input type="radio" name="gemido" value="sim">Sim
+                <label><input type="radio" name="gemido" value="nao" checked>Não
+                <br>
+                <label> Estridor: </label>
+                <label><input type="radio" name="estridor" value="sim">Sim
+                <label><input type="radio" name="estridor" value="nao" checked>Não
+                <br>
+                <label> Sinais de esforço respiratório: </label>
+                <label><input type="radio" name="esfresp" value="sim">Sim
+                <label><input type="radio" name="esfresp" value="nao" checked>Não
+                <br>
+                <label> Ausculta Cardíaca:</label> <br>
+                <label><input type="radio" name="auscultacar" value="bulhas">Bulhas cardíacas
+                <label><input type="radio" name="auscultacar" value="comsopro">Com Sopro
+                <label><input type="radio" name="auscultacar" value="semsopro" checked>Sem Sopro
+                </div>
+</fieldset>
 </form>
         <br>
 [BOTÃO COPIAR]

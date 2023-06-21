@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Copiar dados para a área de transferência</title>
+</head>
+<body>
+  <h1>Copiar dados para a área de transferência</h1>
+
+  <form id="myForm">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="phone">Telefone:</label>
+    <input type="tel" id="phone" name="phone" required><br>
+
+    <button type="button" onclick="copiarDados()">Copiar</button>
+  </form>
+
+  <script>
+    function copiarDados() {
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+
+      var dados = "Nome: " + name + "\n" +
+                  "Email: " + email + "\n" +
+                  "Telefone: " + phone;
+
+      navigator.clipboard.writeText(dados)
+        .then(function() {
+          console.log("Dados copiados para a área de transferência!");
+        })
+        .catch(function(error) {
+          console.error("Erro ao copiar os dados: ", error);
+        });
+    }
+  </script>
+</body>
+</html>
+
+
