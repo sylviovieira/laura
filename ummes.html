@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:text-align="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="UTF-8"/>
-    <title> Anamnese</title>
-    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
-</head>
+ <head>
+        <meta charset="UTF-8"/>
+        <title> Anamnese</title>
+        <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+        <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
+
+        <script src="./js/dados.js" defer=""></script>
+    </head>
 
 <body>
 <nav id="menu">
@@ -29,7 +32,7 @@
 <h1>Anamenese</h1>
 <h2>Questões a serem respondidas</h2>
 
-<form>
+<form method="post" id="dados">
         <fieldset>
             <div>
             <h2>Identificação da criança de Um mês</h2>
@@ -510,10 +513,16 @@
                 </div>
                 <br>
             </fieldset>
+            <div class="row">
+                <div class="col-10 col-s-12"></div>
+                <div class="col-2 col-s-12"></div>
+                <button type="button" id="btnSalvar">Copiar Dados</button>
+            </div>
+
 
 </form>
         <br>
-[BOTÃO COPIAR]
+
 <div text-align: center>
 <h5 > Copyright 2023 - Laboratório de Produtos Avançados do Mestrado em Saúde Materno Infantil - by Sylvio Vieira</h5>
     </div>

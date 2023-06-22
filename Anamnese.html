@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://laura.lapinf.ufn.edu.br/ -->
+<html lang="pt-br" xmlns:text-align="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title> Anamnese</title>
+        <link rel="stylesheet" type="text/css" href="./Anamnese_files/estilo.css">
+        
+        <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
+
+        <script src="./dados.js" defer=""></script>
+        <meta id="dcngeagmmhegagicpcmpinaoklddcgon">
+    </head> 
+
+<body>
+<nav id="menu">
+<h1>Menu Principal</h1>
+<ul>
+    <li><a href="https://laura.lapinf.ufn.edu.br/rn.html">Recém-nascido</a></li>
+    <li><a href="https://laura.lapinf.ufn.edu.br/ummes.html"> Primeiro Mês</a></li>
+    <li><a href="https://laura.lapinf.ufn.edu.br/doismeses.html"> 2 - 3 Meses</a></li>
+    <li><a href="https://laura.lapinf.ufn.edu.br/quatromeses.html"> 4 - 5 Meses</a></li>
+    <li><a href="https://laura.lapinf.ufn.edu.br/seismeses.html"> 6 Meses</a></li>
+    <li><a href="https://laura.lapinf.ufn.edu.br/novemeses.html"> 9 Meses</a></li>
+    <li><a href="https://laura.lapinf.ufn.edu.br/dozemeses.html"> 12 Meses</a></li>
+    <li><a href="https://laura.lapinf.ufn.edu.br/dezoitomeses.html"> 18 Meses</a></li>
+    <li><a href="https://laura.lapinf.ufn.edu.br/doisanos.html"> Dois Anos</a></li>
+</ul>
+</nav>
+<br>
+    <div id="formulario">
+        <br>
+        <br>
+        <br>
+<h1>Anamenese</h1>
+<h2>Questões a serem respondidas</h2>
+
+<form method="post" id="dados" action="https://laura.lapinf.ufn.edu.br/dados.csv">
+        <fieldset>
+            <div>
+            <h2>Identificação do Recém Nascido</h2>
+            </div>
+            <div>
+                <label> Peso:</label>
+                <input type="number" step="0.0010" size="4" title="Peso do paciente" maxlength="4" min="0" max="15" nome="peso" name="peso" id="peso">
+                <label>Estatura:</label>
+                <input type="text" nome="estatura" id="estatura">
+                <label> PC(cm):</label>
+                <input type="text" nome="pc" id="pc">
+                <label>Temperatura axilar (ºC):</label>
+                <input type="text" nome="tempaux" id="tempaux">
+             </div>
+            <br>
+            <div>
+                <label> Estado Geral:</label>
+                <label>
+                    <input type="radio" name="estgeral" value="Ativo" checked="">Ativo
+                </label>
+                <label>
+                    <input type="radio" name="estgeral" value="Hipoativo">Hipoativo
+                </label>
+                <label>
+                    <input type="radio" name="estgeral" value="Letargico">Letárgico
+                </label>
+                <label>
+                    <input type="radio" name="estgeral" value="Calmo">Calmo
+                </label>
+                <label>
+                    <input type="radio" name="estgeral" value="Choroso">Choroso
+                </label>
+
+            </div>
+            <br>
+            <div>
+                <label>Estado da Pele:</label>
+                <label>
+                    <input type="radio" name="estpele" value="Lisa" checked="">Lisa
+                </label>
+                <label>
+                    <input type="radio" name="estpele" value="Irregula">Irregular
+                </label>
+                <label>
+                    <input type="radio" name="estpele" value="Macia">Macia
+                </label>
+                <label>
+                    <input type="radio" name="estpele" value="Aspera">Áspera
+                </label>
+                <label>
+                    <input type="radio" name="estpele" value="Rosea">Rósea
+                </label>
+                <label>
+                    <input type="radio" name="estpele" value="Palida">Pálida
+                </label>
+                <label>
+                    <input type="radio" name="estpele" value="Cianotica">Cianótica
+                </label>
+                <label>
+                    <input type="radio" name="estpele" value="Icterica">Ictérica
+                </label>
+                <label>
+                    <input type="radio" name="estpele" value="Hidratada">Hidratada
+                </label>
+                <label>
+                    <input type="radio" name="estpele" value="Desidratada">Desidratada
+                </label>
+
+            </div>
+            <br>
+            <div>
+                <label> Krammer Zone:</label>
+                <label>
+                    <input type="radio" name="krammer" value="1" checked="">1
+                </label>
+                <label>
+                    <input type="radio" name="krammer" value="2">2
+                </label>
+                <label>
+                    <input type="radio" name="krammer" value="3">3
+                </label>
+                <label>
+                    <input type="radio" name="krammer" value="4">4
+                </label>
+                <label>
+                    <input type="radio" name="krammer" value="5">5
+                </label>
+
+            </div>
+            <br>
+            <div>
+                <label> Millium sebáceo:</label>
+                <label><input type="radio" name="millium" value="sim" checked="">Sim
+                <label><input type="radio" name="millium" value="nao">Não
+                <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hemangioma: </label>
+                <label> <input type="radio" name="hemanioma" value="sim" checked="">Sim
+                <label> <input type="radio" name="hemangioma" value="nao">Não
+                <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mancha mongólica: </label>
+                <label> <input type="radio" name="mancham" value="sim" checked="">Sim
+                <label> <input type="radio" name="mancham" value="nao">Não
+                <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Eritema tóxico: </label>
+                <label> <input type="radio" name="eritema" value="sim" checked="">Sim
+                <label> <input type="radio" name="eritema" value="nao">Não
+            </label></label></label></label></label></label></label></label></div>
+            <br>
+            <div>
+                <label>Cabeça</label>
+            </div>
+            <div>
+                <label> Fontenelas:</label>
+                <label><input type="radio" name="fontenelas" value="abauladas" checked="">Abauladas
+                <label><input type="radio" name="fontenelas" value="deprimidas">Deprimidas
+                <label><input type="radio" name="fontenelas" value="planas">Planas
+                <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bossa serossanguinolenta: </label>
+                <label> <input type="radio" name="bossa" value="sim" checked="">Sim
+                <label> <input type="radio" name="bossa" value="nao">Não
+                <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cefalohematoma: </label>
+                <label> <input type="radio" name="mancham" value="sim" checked="">Sim
+                <label> <input type="radio" name="mancham" value="nao">Não
+            </label></label></label></label></label></label></label></div>
+            <br>
+            <div>
+                <label> Linfonodos cervicais palpáveis:</label>
+                <label><input type="radio" name="linfonodos" value="movel">Móvel
+                <label> <input type="radio" name="linfonodos" value="fixo">Fixo
+                <label> <input type="radio" name="linfonodos" value="fibrobastico">Fibrobástico
+                <label> <input type="radio" name="linfonodos" value="amolecido">Amolecido
+                <label> <input type="radio" name="linfonodos" value="endurecido">Endurecido
+                <label> <input type="radio" name="eritema" value="nao" checked="">Não Apresenta
+            </label></label></label></label></label></label></div>
+            <br>
+            <div>
+                <label> Face:</label>
+                <label><input type="radio" name="face" value="assimetrica">Assimétrica
+                <label><input type="radio" name="face" value="simetrica" checked="">Simétrica
+            </label></label></div>
+
+
+            </fieldset>
+            <div class="row">
+                <div class="col-10 col-s-12"></div>
+                <div class="col-2 col-s-12"></div>
+                <button type="button" id="btnSalvar">Copiar</button>
+            </div>
+</form>
+        <br>
+
+<div text-align:="" center="">
+<h5> Copyright 2023 - Laboratório de Produtos Avançados do Mestrado em Saúde Materno Infantil - by Sylvio Vieira</h5>
+    </div>
+   <div align="center"><h5>Facebook | Twitter</h5>
+</div>
+    </div>
+
+</body>
+</html>
