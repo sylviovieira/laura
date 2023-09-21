@@ -9,7 +9,9 @@ $(document).ready(function() {
       elementos.each(function() {
         const nome = $(this).attr('name');
         const valor = $(this).val();
-        textoCopiar += `${nome.charAt(0).toUpperCase() + nome.slice(1)}: ${valor}\n`;
+        if (valor && valor.trim() !== '') {
+          textoCopiar += `${nome.charAt(0).toUpperCase() + nome.slice(1)}: ${valor}\n`;
+        }
       });
       textoCopiar += '\n';
     }
