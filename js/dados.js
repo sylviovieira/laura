@@ -1,15 +1,29 @@
 $(document).ready(function() {
   $("#btnSalvar").click(function() {
 
-    let dadosFormulario = {};
+    let textoCopiar = 'Anamnese - Dados Coletados:\n\n'; // Título principal
 
-    // Puxar os dados de cada input e select do formulário
-    $('#dados input, #dados select').each(function() {
-      const nome = $(this).attr('name');
-      const valor = $(this).val();
-      dadosFormulario[nome] = valor;
-    });
+    // Função para formatar os dados de cada classe
+    function formatarDadosPorClasse(classe) {
+      const elementos = $(`.${classe} input:checked, .${classe} input[type=text], .${classe} input[type=number]`);
+      elementos.each(function() {
+        const nome = $(this).attr('name');
+        const valor = $(this).val();
+        textoCopiar += `${nome.charAt(0).toUpperCase() + nome.slice(1)}: ${valor}\n`;
+      });
+      textoCopiar += '\n';
+    }
 
-    console.log(dadosFormulario); // Aqui você pode processar os dados conforme necessário
+    // Formatar os dados de cada classe
+    formatarDadosPorClasse('Identificação');
+    formatarDadosPorClasse('estadoGeral');
+    formatarDadosPorClasse('estadoDaPele');
+    formatarDadosPorClasse('krammer');
+    formatarDadosPorClasse('millium');
+    formatarDadosPorClasse('cabeca');
+    formatarDadosPorClasse('linfonodos');
+
+    // Copia os valores formatados para a memória
+    navigator.clipboard.writeText(textoCopiar);
   });
 });
