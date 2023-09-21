@@ -16,14 +16,13 @@ $(document).ready(function() {
       textoCopiar += '\n';
     }
 
-    // Formatar os dados de cada classe
-    formatarDadosPorClasse('Identificação');
-    formatarDadosPorClasse('estadoGeral');
-    formatarDadosPorClasse('estadoDaPele');
-    formatarDadosPorClasse('krammer');
-    formatarDadosPorClasse('millium');
-    formatarDadosPorClasse('cabeca');
-    formatarDadosPorClasse('linfonodos');
+    // Lista de classes no formulário
+    const classes = ['Identificação', 'estadoGeral', 'estadoDaPele', 'krammer', 'millium', 'cabeca', 'linfonodos'];
+
+    // Iterar sobre cada classe e formatar os dados
+    classes.forEach(classe => {
+      formatarDadosPorClasse(classe);
+    });
 
     // Copia os valores formatados para a memória
     navigator.clipboard.writeText(textoCopiar);
