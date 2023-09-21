@@ -1,17 +1,15 @@
-$( document ).ready(function() {
-  $("#btnSalvar").click(function(){
+$(document).ready(function() {
+  $("#btnSalvar").click(function() {
 
-    let textoCopiar = '';
+    let dadosFormulario = {};
 
-    /*
-      pega todos os campos do formulário id="dados", transforma num JSON
-      percorre o array com os dados do formulário e limpa ele para como será guardado no textoCopiar
-    */
-    $.each($('#dados').serializeArray(), function() {
-      textoCopiar = textoCopiar+`${this.name.toUpperCase()}: ${this.value} ;`;
+    // Puxar os dados de cada input e select do formulário
+    $('#dados input, #dados select').each(function() {
+      const nome = $(this).attr('name');
+      const valor = $(this).val();
+      dadosFormulario[nome] = valor;
     });
 
-    //joga o textoCopiar para a memória
-    navigator.clipboard.writeText(textoCopiar);
+    console.log(dadosFormulario); // Aqui você pode processar os dados conforme necessário
   });
 });
