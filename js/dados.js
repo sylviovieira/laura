@@ -1,4 +1,5 @@
-$("#btnSalvar").click(function() {
+$(document).ready(function() {
+  $("#btnSalvar").click(function() {
 
     let textoCopiar = ''; // Título principal
 
