@@ -1,21 +1,19 @@
-$( document ).ready(function() {
-  $("#btnSalvar").click(function(){
+$(document).ready(function() {
+  $("#btnSalvar").click(function() {
 
-    // titulo principal
-    let textoCopiar = 'Anamnese - Dados Coletados: \n\n';
+    let textoCopiar = 'Anamnese - Dados Coletados:\n\n'; // Título principal
 
-    // subtitulo seção de identificação
-    textoCopiar += 'Identificação do Recém nascido: \n';
-
-    /*
-      pega todos os campos do formulário id="dados", transforma num JSON
-      percorre o array com os dados do formulário e limpa ele para como será guardado no textoCopiar
-    */
     $.each($('#dados').serializeArray(), function() {
-      textoCopiar = textoCopiar+`${this.name.chartAt(0).toUpperCase() + this.name.slice(1)}: ${this.value}\n\n`;
+      // Adiciona um título para cada campo e formata o valor em um novo parágrafo
+      textoCopiar += `${this.name.charAt(0).toUpperCase() + this.name.slice(1)}: ${this.value}\n\n`;
     });
-    
-    //joga o textoCopiar para a memória
+
+    // Adiciona um rodapé ao texto copiado
+    textoCopiar += '----- FIM DOS DADOS -----\n\n';
+    textoCopiar += 'Copyright 2023 - Laboratório de Produtos Avançados do Mestrado em Saúde Materno Infantil - by Sylvio Vieira\n';
+    textoCopiar += 'Facebook | Twitter';
+
+    // Copia os valores formatados para a memória
     navigator.clipboard.writeText(textoCopiar);
   });
 });
