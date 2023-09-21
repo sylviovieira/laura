@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     // Função para formatar os dados de cada classe
     function formatarDadosPorClasse(classe) {
-      const elementos = $(`#${classe} input:checked, #${classe} input[type=text], #${classe} input[type=number]`);
+      const elementos = $(`.${classe} input:checked, .${classe} input[type=text], .${classe} input[type=number]`);
       let dadosClasse = '';
       elementos.each(function() {
         const nome = $(this).attr('name');
