@@ -27,3 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
     classesDoFormulario.forEach(classe => {
       formatarDadosPorClasse(classe);
     });
+
+    // Copia os valores formatados para a memória
+    navigator.clipboard.writeText(textoCopiar);
+  });
+});
