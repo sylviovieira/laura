@@ -1,17 +1,29 @@
-$( document ).ready(function() {
-  $("#btnSalvar").click(function(){
+$(document).ready(function() {
+  $("#btnSalvar").click(function() {
 
-    let textoCopiar = '';
+    let textoCopiar = 'Anamnese - Dados Coletados:\n\n'; // Título principal
 
-    /*
-      pega todos os campos do formulário id="dados", transforma num JSON
-      percorre o array com os dados do formulário e limpa ele para como será guardado no textoCopiar
-    */
-    $.each($('#dados').serializeArray(), function() {
-      textoCopiar = textoCopiar+`${this.name.toUpperCase()}: ${this.value} ;`;
-    });
+    // Função para formatar os dados de cada classe
+    function formatarDadosPorClasse(classe) {
+      const elementos = $(`.${classe} input, .${classe} select`);
+      elementos.each(function() {
+        const nome = $(this).attr('name');
+        const valor = $(this).val();
+        textoCopiar += `${nome.charAt(0).toUpperCase() + nome.slice(1)}: ${valor}   `;
+      });
+      textoCopiar += '\n\n';
+    }
 
-    //joga o textoCopiar para a memória
+    // Formatar os dados de cada classe
+    formatarDadosPorClasse('Identificação');
+    formatarDadosPorClasse('estadoGeral');
+    formatarDadosPorClasse('estadoDaPele');
+    formatarDadosPorClasse('krammer');
+    formatarDadosPorClasse('millium');
+    formatarDadosPorClasse('cabeca');
+    formatarDadosPorClasse('linfonodos');
+
+    // Copia os valores formatados para a memória
     navigator.clipboard.writeText(textoCopiar);
   });
 });
