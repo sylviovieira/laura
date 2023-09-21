@@ -1,16 +1,14 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const btnSalvar = document.getElementById("btnSalvar");
-
-  btnSalvar.addEventListener("click", function() {
+$(document).ready(function() {
+  $("#btnSalvar").click(function() {
     let textoCopiar = 'Anamnese - Dados Coletados:\n\n'; // Título principal
 
     // Função para formatar os dados de cada classe
     function formatarDadosPorClasse(classe) {
-      const elementos = document.querySelectorAll(`.${classe} input:checked, .${classe} input[type=text], .${classe} input[type=number]`);
+      const elementos = $(`#${classe} input:checked, #${classe} input[type=text], #${classe} input[type=number]`);
       let dadosClasse = '';
-      elementos.forEach(elemento => {
-        const nome = elemento.name;
-        const valor = elemento.value;
+      elementos.each(function() {
+        const nome = $(this).attr('name');
+        const valor = $(this).val();
         if (valor && valor.trim() !== '') {
           dadosClasse += `${nome.charAt(0).toUpperCase() + nome.slice(1)}: ${valor}  `;
         }
@@ -21,7 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Coletar todas as classes do formulário
-    const classesDoFormulario = Array.from(document.querySelectorAll('#dados div[class]')).map(div => div.className);
+    const classesDoFormulario = [];
+    $('#dados div[class]').each(function() {
+      classesDoFormulario.push($(this).attr('class'));
+    });
 
     // Iterar sobre cada classe e formatar os dados
     classesDoFormulario.forEach(classe => {
