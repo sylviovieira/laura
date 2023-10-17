@@ -1,166 +1,413 @@
-import Menu from '../Menu';
 import React, { useState } from 'react';
 
-const AnamneseForm = () => {
-    const [formData, setFormData] = useState({
-        peso: '',
-        estatura: '',
-        pc: '',
-        tempaux: '',
-        fr: '',
-        estgeral: 'Ativo',
-        estpele: 'Lisa',
-        estcabeca: 'Normocéfalo',
-        estolhos: 'Isocóricas',
-        estnariz: 'Pérvio',
-        estboca: 'Hidratada',
-        estouvido: 'Pérvio',
-        esttorax: 'Simétrico',
-        estabdome: 'Plano',
-        estgenitourinario: 'Íntegro',
-        estcoluna: 'Ereta',
-        estextremidades: 'Íntegras',
-    });
+function Formulario() {
+  const [dados, setDados] = useState({
+    peso: '',
+    estatura: '',
+    pc: '',
+    temperatura: '',
+    fr: '',
+    estadoGeral: '',
+    estadoPele: '',
+    krammerZone: '',
+    milliumSebaceo: 'Não',
+    hemangioma: 'Não',
+    manchaMongolica: 'Não',
+    eritemaToxico: 'Não',
+    fontenelas: 'Abauladas',
+    bossa: 'Não',
+    cefalohematoma: 'Não',
+    linfonodosCervicais: 'Não',
+    faceSimetria: 'Simétrica',
+    aparenciaSindromica: 'Não',
+    malformacaoFace: 'Não',
+    olhosSimetria: 'Simétricos',
+    olhosSecrecao: 'Não',
+    olhosEstrabismo: 'Não',
+    esclera: 'Anictérica',
+    pupilas: 'Isocóricas',
+    narizSecrecao: 'Não',
+    narizBatimentos: 'Não',
+    narizObstrucao: 'Não',
+    palatoIntegro: 'Sim',
+    fendaLabial: 'Não',
+    tamanhoLingua: 'Normal',
+    freioLingual: 'Normal',
+    mucosaCor: 'Corada',
+    mucosaPálida: 'Não',
+    mucosaIctérica: 'Não',
+    mucosaCianótica: 'Não',
+    mucosaAcianótica: 'Não',
+    mucosaÚmida: 'Não',
+    mucosaSeca: 'Não',
+    ouvidosSecrecao: 'Não',
+    linfonodoRetroauricular: 'Não',
+    torcicoloCongenito: 'Não',
+    toraxSimetria: 'Simétrico',
+    toraxDeformidades: 'Não',
+    linfonodoSupraclavicular: 'Não',
+    linfonodoAxilar: 'Não',
+    brotoMamario: 'Não',
+    auscultaPulmonarTiragem: 'Não',
+    auscultaPulmonarRetração: 'Não',
+    auscultaPulmonarGemidos: 'Não',
+    auscultaPulmonarEstridor: 'Não',
+    auscultaPulmonarSinaisEsforco: 'Não',
+    auscultaCardiacaSopro: 'Não',
+    abdomenDilatado: 'Não',
+    abdomenEscavado: 'Não',
+    abdomenGloboso: 'Não',
+    herniaUmbilical: 'Não',
+    ruidosHidroaereos: 'Não',
+    cotoUmbilical: 'Não',
+    cotoUmbilicalSecrecao: 'Não',
+    cotoUmbilicalHiperemia: 'Não',
+    cotoUmbilicalOdor: 'Não',
+    cotoUmbilicalGranuloma: 'Não',
+    cotoUmbilicalDorPalpacao: 'Não',
+    membrosSuperioresDeformidades: 'Não',
+    membrosSuperioresMalformacao: 'Não',
+    membrosSuperioresLinhaPalmar: 'Não',
+    membrosInferioresDeformidades: 'Não',
+    membrosInferioresMalformacao: 'Não',
+    membrosInferioresPéTorto: 'Não',
+    membrosInferioresPolidactilia: 'Não',
+    genitaliaFemininaLábiosClitóris: 'Não',
+    genitaliaFemininaSecrecao: 'Não',
+    genitaliaFemininaSinequia: 'Não',
+    genitaliaFemininaHerniaInguinal: 'Não',
+    genitaliaMasculinaHerniaInguinal: 'Não',
+    genitaliaMasculinaHidrocele: 'Não',
+    genitaliaMasculinaFimoseFisiologica: 'Não',
+    genitaliaMasculinaTesticulos: 'Não',
+    genitaliaMasculinaMeatoUrinario: 'Não',
+    genitaliaMasculinaOrificioVisualizado: 'Não',
+    genitaliaMasculinaHipospadia: 'Não',
+    genitaliaMasculinaEpispadia: 'Não',
+    orificioAnalAnomalias: 'Não',
+    orificioAnalFissuras: 'Não',
+    orificioAnalAssaduras: 'Não',
+    reflexosBusca: 'Não',
+    reflexosSucção: 'Não',
+    reflexosMoro: 'Não',
+    reflexosBabinski: 'Não',
+    reflexosPreensaoPalmar: 'Não',
+    reflexosPreensaoPlantar: 'Não',
+    reflexosMarcha: 'Não',
+  });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setDados({ ...dados, [name]: value });
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(formData);
-    };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Aqui você pode enviar os dados para o servidor ou realizar qualquer ação desejada com os dados do formulário.
+    console.log(dados);
+  };
 
-    return (
-        <div>
-            < Menu />
-            <div id="formulario">
-                <h1>Anamnese</h1>
-                <h2>Questões a serem respondidas</h2>
-                <form method="post" id="dados" onSubmit={handleSubmit}>
-                    <fieldset>
-                        <div>
-                            <h2>Identificação do Recém Nascido</h2>
-                        </div>
-                        <div>
-                            <label>
-                                Peso (Kg):
-                                <input type="number" name="peso" value={formData.peso} onChange={handleChange} />
-                            </label>
-                            <label>
-                                Estatura (cm):
-                                <input type="number" name="estatura" value={formData.estatura} onChange={handleChange} />
-                            </label>
-                            <label>
-                                PC (cm):
-                                <input type="number" name="pc" value={formData.pc} onChange={handleChange} />
-                            </label>
-                            <label>
-                                Temperatura Axilar (°C):
-                                <input type="number" name="tempaux" value={formData.tempaux} onChange={handleChange} />
-                            </label>
-                            <label>
-                                FR (irpm):
-                                <input type="number" name="fr" value={formData.fr} onChange={handleChange} />
-                            </label>
-                            <label>
-                                Estado Geral:
-                                <select name="estgeral" value={formData.estgeral} onChange={handleChange}>
-                                    <option value="Ativo">Ativo</option>
-                                    <option value="Letárgico">Letárgico</option>
-                                    <option value="Comatoso">Comatoso</option>
-                                </select>
-                            </label>
-                            <label>
-                                Estado da Pele:
-                                <select name="estpele" value={formData.estpele} onChange={handleChange}>
-                                    <option value="Lisa">Lisa</option>
-                                    <option value="Maculada">Maculada</option>
-                                    <option value="Papulosa">Papulosa</option>
-                                </select>
-                            </label>
-                            <label>
-                                Estado da Cabeça:
-                                <select name="estcabeca" value={formData.estcabeca} onChange={handleChange}>
-                                    <option value="Normocéfalo">Normocéfalo</option>
-                                    <option value="Microcéfalo">Microcéfalo</option>
-                                    <option value="Macrocéfalo">Macrocéfalo</option>
-                                </select>
-                            </label>
-                            <label>
-                                Estado dos Olhos:
-                                <select name="estolhos" value={formData.estolhos} onChange={handleChange}>
-                                    <option value="Isocóricas">Isocóricas</option>
-                                    <option value="Anisocóricas">Anisocóricas</option>
-                                </select>
-                            </label>
-                            <label>
-                                Estado do Nariz:
-                                <select name="estnariz" value={formData.estnariz} onChange={handleChange}>
-                                    <option value="Pérvio">Pérvio</option>
-                                    <option value="Obstruído">Obstruído</option>
-                                </select>
-                            </label>
-                            <label>
-                                Estado da Boca:
-                                <select name="estboca" value={formData.estboca} onChange={handleChange}>
-                                    <option value="Hidratada">Hidratada</option>
-                                    <option value="Ressecada">Ressecada</option>
-                                </select>
-                            </label>
-                            <label>
-                                Estado do Ouvido:
-                                <select name="estouvido" value={formData.estouvido} onChange={handleChange}>
-                                    <option value="Pérvio">Pérvio</option>
-                                    <option value="Obstruído">Obstruído</option>
-                                </select>
-                            </label>
-                            <label>
-                                Estado do Tórax:
-                                <select name="esttorax" value={formData.esttorax} onChange={handleChange}>
-                                    <option value="Simétrico">Simétrico</option>
-                                    <option value="Assimétrico">Assimétrico</option>
-                                </select>
-                            </label>
-                            <label>
-                                Estado do Abdome:
-                                <select name="estabdome" value={formData.estabdome} onChange={handleChange}>
-                                    <option value="Plano">Plano</option>
-                                    <option value="Distendido">Distendido</option>
-                                </select>
-                            </label>
-                            <label>
-                                Estado Genitourinário:
-                                <select name="estgenitourinario" value={formData.estgenitourinario} onChange={handleChange}>
-                                    <option value="Íntegro">Íntegro</option>
-                                    <option value="Alterado">Alterado</option>
-                                </select>
-                            </label>
-                            <label>
-                                Estado da Coluna:
-                                <select name="estcoluna" value={formData.estcoluna} onChange={handleChange}>
-                                    <option value="Ereta">Ereta</option>
-                                    <option value="Desviada">Desviada</option>
-                                </select>
-                            </label>
-                            <label>
-                                Estado das Extremidades:
-                                <select name="estextremidades" value={formData.estextremidades} onChange={handleChange}>
-                                    <option value="Íntegras">Íntegras</option>
-                                    <option value="Amputadas">Amputadas</option>
-                                </select>
-                            </label>
-                        </div>
-                    </fieldset>
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
-        </div>
-    );
-};
+  return (
+    <form method="post" id="dados" onSubmit={handleSubmit}>
+      <div>
+        <h2>Anamnese</h2>
+        <p>Questões a serem respondidas</p>
+      </div>
+      <div>
+        <h3>Identificação do Recém Nascido</h3>
+        <label>Peso (Kg):</label>
+        <input
+          type="text"
+          name="peso"
+          value={dados.peso}
+          onChange={handleChange}
+        />
+        <label>Estatura (Cm):</label>
+        <input
+          type="text"
+          name="estatura"
+          value={dados.estatura}
+          onChange={handleChange}
+        />
+        <label>PC (cm):</label>
+        <input
+          type="text"
+          name="pc"
+          value={dados.pc}
+          onChange={handleChange}
+        />
+        <label>Temperatura axilar (ºC):</label>
+        <input
+          type="text"
+          name="temperatura"
+          value={dados.temperatura}
+          onChange={handleChange}
+        />
+        <label>FR (RPM):</label>
+        <input
+          type="text"
+          name="fr"
+          value={dados.fr}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <h3>Estado Geral</h3>
+        <label>Ativo</label>
+        <input
+          type="radio"
+          name="estadoGeral"
+          value="Ativo"
+          onChange={handleChange}
+          checked={dados.estadoGeral === 'Ativo'}
+        />
+        <label>Hipoativo</label>
+        <input
+          type="radio"
+          name="estadoGeral"
+          value="Hipoativo"
+          onChange={handleChange}
+          checked={dados.estadoGeral === 'Hipoativo'}
+        />
+        <label>Letárgico</label>
+        <input
+          type="radio"
+          name="estadoGeral"
+          value="Letárgico"
+          onChange={handleChange}
+          checked={dados.estadoGeral === 'Letárgico'}
+        />
+        <label>Calmo</label>
+        <input
+          type="radio"
+          name="estadoGeral"
+          value="Calmo"
+          onChange={handleChange}
+          checked={dados.estadoGeral === 'Calmo'}
+        />
+        <label>Choroso</label>
+        <input
+          type="radio"
+          name="estadoGeral"
+          value="Choroso"
+          onChange={handleChange}
+          checked={dados.estadoGeral === 'Choroso'}
+        />
+      </div>
+      <div>
+        <h3>Estado da Pele</h3>
+        <label>Lisa</label>
+        <input
+          type="radio"
+          name="estadoPele"
+          value="Lisa"
+          onChange={handleChange}
+          checked={dados.estadoPele === 'Lisa'}
+        />
+        <label>Irregular</label>
+        <input
+          type="radio"
+          name="estadoPele"
+          value="Irregular"
+          onChange={handleChange}
+          checked={dados.estadoPele === 'Irregular'}
+        />
+        <label>Macia</label>
+        <input
+          type="radio"
+          name="estadoPele"
+          value="Macia"
+          onChange={handleChange}
+          checked={dados.estadoPele === 'Macia'}
+        />
+        <label>Áspera</label>
+        <input
+          type="radio"
+          name="estadoPele"
+          value="Áspera"
+          onChange={handleChange}
+          checked={dados.estadoPele === 'Áspera'}
+        />
+        <label>Rósea</label>
+        <input
+          type="radio"
+          name="estadoPele"
+          value="Rósea"
+          onChange={handleChange}
+          checked={dados.estadoPele === 'Rósea'}
+        />
+        <label>Pálida</label>
+        <input
+          type="radio"
+          name="estadoPele"
+          value="Pálida"
+          onChange={handleChange}
+          checked={dados.estadoPele === 'Pálida'}
+        />
+        <label>Cianótica</label>
+        <input
+          type="radio"
+          name="estadoPele"
+          value="Cianótica"
+          onChange={handleChange}
+          checked={dados.estadoPele === 'Cianótica'}
+        />
+        <label>Ictérica</label>
+        <input
+          type="radio"
+          name="estadoPele"
+          value="Ictérica"
+          onChange={handleChange}
+          checked={dados.estadoPele === 'Ictérica'}
+        />
+        <label>Hidratada</label>
+        <input
+          type="radio"
+          name="estadoPele"
+          value="Hidratada"
+          onChange={handleChange}
+          checked={dados.estadoPele === 'Hidratada'}
+        />
+        <label>Desidratada</label>
+        <input
+          type="radio"
+          name="estadoPele"
+          value="Desidratada"
+          onChange={handleChange}
+          checked={dados.estadoPele === 'Desidratada'}
+        />
+      </div>
+      <div>
+        <h3>Krammer Zone</h3>
+        <select name="krammerZone" value={dados.krammerZone} onChange={handleChange}>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <h3>Millium Sebáceo</h3>
+        <label>Sim</label>
+        <input
+          type="radio"
+          name="milliumSebaceo"
+          value="Sim"
+          onChange={handleChange}
+          checked={dados.milliumSebaceo === 'Sim'}
+        />
+        <label>Não</label>
+        <input
+          type="radio"
+          name="milliumSebaceo"
+          value="Não"
+          onChange={handleChange}
+          checked={dados.milliumSebaceo === 'Não'}
+        />
+      </div>
+      <div>
+        <h3>Hemangioma</h3>
+        <label>Sim</label>
+        <input
+          type="radio"
+          name="hemangioma"
+          value="Sim"
+          onChange={handleChange}
+          checked={dados.hemangioma === 'Sim'}
+        />
+        <label>Não</label>
+        <input
+          type="radio"
+          name="hemangioma"
+          value="Não"
+          onChange={handleChange}
+          checked={dados.hemangioma === 'Não'}
+        />
+      </div>
+      <div>
+        <h3>Mancha Mongólica</h3>
+        <label>Sim</label>
+        <input
+          type="radio"
+          name="manchaMongolica"
+          value="Sim"
+          onChange={handleChange}
+          checked={dados.manchaMongolica === 'Sim'}
+        />
+        <label>Não</label>
+        <input
+          type="radio"
+          name="manchaMongolica"
+          value="Não"
+          onChange={handleChange}
+          checked={dados.manchaMongolica === 'Não'}
+        />
+      </div>
+      <div>
+        <h3>Eritema Tóxico</h3>
+        <label>Sim</label>
+        <input
+          type="radio"
+          name="eritemaToxico"
+          value="Sim"
+          onChange={handleChange}
+          checked={dados.eritemaToxico === 'Sim'}
+        />
+        <label>Não</label>
+        <input
+          type="radio"
+          name="eritemaToxico"
+          value="Não"
+          onChange={handleChange}
+          checked={dados.eritemaToxico === 'Não'}
+        />
+      </div>
+      <div>
+        <h3>Cabeça</h3>
+        <label>Fontenelas:</label>
+        <select name="fontenelas" value={dados.fontenelas} onChange={handleChange}>
+          <option value="Abauladas">Abauladas</option>
+          <option value="Deprimidas">Deprimidas</option>
+          <option value="Planas">Planas</option>
+        </select>
+        <label>Bossa Serossanguinolenta</label>
+        <input
+          type="radio"
+          name="bossa"
+          value="Sim"
+          onChange={handleChange}
+          checked={dados.bossa === 'Sim'}
+        />
+        <label>Não</label>
+        <input
+          type="radio"
+          name="bossa"
+          value="Não"
+          onChange={handleChange}
+          checked={dados.bossa === 'Não'}
+        />
+        <label>Cefalohematoma</label>
+        <input
+          type="radio"
+          name="cefalohematoma"
+          value="Sim"
+          onChange={handleChange}
+          checked={dados.cefalohematoma === 'Sim'}
+        />
+        <label>Não</label>
+        <input
+          type="radio"
+          name="cefalohematoma"
+          value="Não"
+          onChange={handleChange}
+          checked={dados.cefalohematoma === 'Não'}
+        />
+      </div>
+      {/* ... Continua com os outros campos */}
+      <button type="submit">Enviar</button>
+    </form>
+  );
+}
 
-export default AnamneseForm;
+export default Formulario;

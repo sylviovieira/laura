@@ -1,16 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes as RouterRoutes } from 'react-router-dom';
-import Menu from '../components/Menu';
-import FormularioAnamnese from '../components/RecemNascido';
+import PaginaInicial from '../components/PaginaInicial';
+import RecemNascido from '../components/RecemNascido';
+import PrimeiroMes from '../components/PrimeiroMes';
+// ... importe todos os outros componentes aqui ...
 import Footer from '../components/Footer';
 
 const Routes = () => {
     return (
         <Router>
-            <Menu />
             <RouterRoutes>
-                <Route path="/" element={<FormularioAnamnese />} />
-                {/* Adicione outras rotas conforme necessário */}
+                <Route path="/" element={<PaginaInicial />} />
+                <Route path="/rn" element={<RecemNascido />} />
+                <Route path="/ummes" element={<PrimeiroMes />} />
+                {/* ... adicione rotas para todos os outros componentes aqui ... */}
             </RouterRoutes>
             <Footer />
         </Router>
